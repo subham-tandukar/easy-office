@@ -2,40 +2,52 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const App = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
+  const handleData = (e) => {
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+    console.log(newData);
   };
-  const handlePassword = (e) => {
-    setPassword(e.target.value);
-  };
+
   const handleLogin = (e) => {
     e.preventDefault();
     axios
       .post("https://reqres.in/api/login", {
-        email: email,
-        password: password,
+        email: data.email,
+        password: data.password,
       })
-      .then((result) => {
+      .then(result => {
         console.log(result.data);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
+
   return (
     <>
       <form>
         Email:
-        <input type="text" value={email} onChange={handleEmail} required />
+        <input
+          type="text"
+          value={data.email}
+          onChange={handleData}
+          autoComplete="off"
+          id="email"
+          required
+        />
         <br />
         Password:
         <input
           type="password"
-          value={password}
-          onChange={handlePassword}
+          value={data.password}
+          onChange={handleData}
+          id="password"
           required
         />
         <br />
