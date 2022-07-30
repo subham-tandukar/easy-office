@@ -112,7 +112,6 @@ const LoginForm = () => {
           <span style={color}>{invalidPassword}</span>
 
           <button className="uk-button" onClick={handleLogin}>
-            {" "}
             <span></span> login
           </button>
         </form>
