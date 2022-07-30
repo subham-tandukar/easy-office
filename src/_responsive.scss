@@ -1,0 +1,48 @@
+$primary-color: #0049ae;
+$secondary-color: #e6edf7;
+$transition: all 0.3s ease-in-out;
+
+@media (max-width: 959.9px) {
+  .login__page {
+    overflow: hidden;
+    .login-form-wrapper,
+    .login-img-wrapper {
+      width: 75%;
+      margin: 0 auto;
+      padding-right: 0 !important;
+      padding-left: 30px !important;
+    }
+  }
+}
+
+@media (max-width: 639.9px) {
+  .login__page {
+    .login-form-wrapper,
+    .login-img-wrapper {
+      width: 100%;
+    }
+    .login__img {
+      .txt {
+        h1 {
+          font-size: 35px;
+        }
+      }
+    }
+    .login__form {
+      padding: 2rem;
+    }
+  }
+}
+@media (max-width: 360.9px) {
+  .login__page {
+    .login__form {
+      padding: 1rem;
+
+      form {
+        .uk-button {
+          width: 75%;
+        }
+      }
+    }
+  }
+}
