@@ -8,6 +8,7 @@ const LoginForm = () => {
     password: "",
   });
 
+  const [passwordType, setPasswordType] = useState("password");
   const [invalidUsername, setInvalidUsername] = useState("");
   const [invalidPassword, setInvalidPassword] = useState("");
   const [color, setColor] = useState({
@@ -59,6 +60,14 @@ const LoginForm = () => {
     setInvalidPassword("");
   };
 
+  const showPassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+    } else {
+      setPasswordType("password");
+    }
+  };
+
   $(function () {
     $(".uk-button")
       .on("mouseenter", function (e) {
@@ -86,30 +95,48 @@ const LoginForm = () => {
         </h3>
         <h5>Enter your valid credentials below.</h5>
         <form>
-          <input
-            type="text"
-            className="uk-input"
-            value={data.email}
-            onChange={handleData}
-            autoComplete="off"
-            id="email"
-            placeholder="Username"
-            onKeyPress={handleUsername}
-            required
-          />
-          <span style={color}>{invalidUsername}</span>
+          <div className="username-input">
+            <input
+              type="text"
+              className="uk-input"
+              value={data.email}
+              onChange={handleData}
+              autoComplete="off"
+              id="email"
+              placeholder="Username"
+              onKeyPress={handleUsername}
+              required
+            />
+            <span style={color}>{invalidUsername}</span>
+          </div>
 
-          <input
-            type="password"
-            className="uk-input"
-            value={data.password}
-            onChange={handleData}
-            id="password"
-            placeholder="Password"
-            onKeyPress={handlePassword}
-            required
-          />
-          <span style={color}>{invalidPassword}</span>
+          <div className="password-input">
+            <div className="uk-position-relative">
+              <input
+                type={passwordType}
+                className="uk-input"
+                value={data.password}
+                onChange={handleData}
+                id="password"
+                placeholder="Password"
+                onKeyPress={handlePassword}
+                required
+              />
+              <span
+                className="toggle-password"
+                uk-toggle="target: .toggle"
+                onClick={showPassword}
+              >
+                <i className="fa fa-eye-slash toggle" title="Show Password"></i>
+                <i
+                  className="fa fa-eye toggle"
+                  title="Hide Password"
+                  hidden
+                ></i>
+              </span>
+            </div>
+            <span style={color}>{invalidPassword}</span>
+          </div>
 
           <button className="uk-button" onClick={handleLogin}>
             <span></span> login

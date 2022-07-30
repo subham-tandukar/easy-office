@@ -94,15 +94,14 @@ html {
 }
 .login__page .login__form form .uk-input {
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 3rem 1.5rem 1rem;
   background: #e6edf7;
-  margin-top: 2rem;
   border-bottom: 3px solid #0049ae;
   border-top-color: transparent;
   border-right-color: transparent;
   border-left-color: transparent;
   border-radius: 9px 9px 0 0;
-  color: #777;
+  color: #000;
 }
 .login__page .login__form form .uk-input:focus {
   outline: 0;
@@ -152,6 +151,23 @@ html {
 .login__page .login__form form .uk-button:hover span {
   width: 225%;
   height: 562.5px;
+}
+.login__page .login__form form .username-input {
+  margin-top: 2rem;
+}
+.login__page .login__form form .password-input {
+  margin-top: 2rem;
+}
+.login__page .login__form form .password-input .toggle-password {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+.login__page .login__form form .password-input .toggle-password:focus-visible {
+  outline: none;
 }
 .login__page .login__form::before {
   content: "";
