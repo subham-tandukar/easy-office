@@ -94,7 +94,7 @@ html {
 }
 .login__page .login__form form .uk-input {
   width: 100%;
-  padding: 1.5rem 3rem 1.5rem 1rem;
+  padding: 1.5rem 3rem 1.5rem 3rem;
   background: #e6edf7;
   border-bottom: 3px solid #0049ae;
   border-top-color: transparent;
@@ -155,8 +155,30 @@ html {
 .login__page .login__form form .username-input {
   margin-top: 2rem;
 }
+.login__page .login__form form .username-input .username-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.login__page .login__form form .username-input .username-icon:focus-visible {
+  outline: none;
+}
 .login__page .login__form form .password-input {
   margin-top: 2rem;
+}
+.login__page .login__form form .password-input .password-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.login__page .login__form form .password-input .password-icon:focus-visible {
+  outline: none;
 }
 .login__page .login__form form .password-input .toggle-password {
   position: absolute;
@@ -192,6 +214,73 @@ html {
   font-size: 14px;
   margin-bottom: 2rem;
   color: #000;
+}
+
+.dashboard nav {
+  background: #fff;
+  box-shadow: 0px 4px 4px rgba(119, 119, 119, 0.25);
+  padding-bottom: 0.3rem;
+}
+.dashboard nav h3 {
+  font-weight: bold;
+  margin: 0;
+}
+.dashboard nav h3 span {
+  color: #0049ae;
+}
+.dashboard nav p {
+  margin: 0;
+  font-size: 14px;
+}
+.dashboard .side__panel {
+  background: linear-gradient(164.93deg, rgba(0, 73, 174, 0.5) 0%, #0049ae 100%);
+}
+.dashboard .side__panel .side-panel-list ul li a {
+  color: #fff;
+  font-size: 16px;
+}
+.dashboard .side__panel .side-panel-list ul li .uk-accordion-content {
+  background: #e6edf7;
+  padding: 0.5rem;
+  padding-left: 4rem;
+}
+.dashboard .side__panel .side-panel-list ul li .uk-accordion-content .dropdown-list {
+  color: #0049ae;
+}
+.dashboard .side__panel .side-panel-list ul .uk-accordion-title {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
+.dashboard .side__panel .side-panel-list ul .uk-accordion-title p {
+  display: none;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.dashboard .side__panel .side-panel-list ul .uk-accordion-title img {
+  height: 30px;
+}
+.dashboard .side__panel .side-panel-list ul .uk-accordion-title::before {
+  display: none;
+}
+.dashboard .side__panel .side-panel-list ul .uk-accordion-title > span {
+  transition: transform 0.5s;
+  margin-left: 0.3rem;
+}
+.dashboard .side__panel .side-panel-list ul .uk-open > .uk-accordion-title > p > span {
+  transform: rotate(90deg);
+}
+.dashboard .side-panel-width {
+  width: auto;
+  transition: width 0.3s ease-in-out;
+  cursor: pointer;
+}
+.dashboard .side-panel-width:hover {
+  width: 250px;
+}
+.dashboard .side-panel-width:hover #list {
+  display: flex;
+  margin-left: 1.5rem !important;
 }
 
 @media (max-width: 959.9px) {

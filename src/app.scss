@@ -122,7 +122,7 @@ html {
     form {
       .uk-input {
         width: 100%;
-        padding: 1.5rem 3rem 1.5rem 1rem;
+        padding: 1.5rem 3rem 1.5rem 3rem;
         background: $secondary-color;
         border-bottom: 3px solid $primary-color;
         border-top-color: transparent;
@@ -180,9 +180,35 @@ html {
       }
       .username-input {
         margin-top: 2rem;
+
+        .username-icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          padding-left: 1rem;
+          cursor: pointer;
+
+          &:focus-visible {
+            outline: none;
+          }
+        }
       }
       .password-input {
         margin-top: 2rem;
+
+        .password-icon {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          padding-left: 1rem;
+          cursor: pointer;
+
+          &:focus-visible {
+            outline: none;
+          }
+        }
 
         .toggle-password {
           position: absolute;
@@ -224,6 +250,96 @@ html {
   font-size: 14px;
   margin-bottom: 2rem;
   color: #000;
+}
+
+.dashboard {
+  nav {
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(119, 119, 119, 0.25);
+    padding-bottom: 0.3rem;
+
+    h3 {
+      font-weight: bold;
+      margin: 0;
+      span {
+        color: $primary-color;
+      }
+    }
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+
+  .side__panel {
+    background: linear-gradient(
+      164.93deg,
+      rgba(0, 73, 174, 0.5) 0%,
+      #0049ae 100%
+    );
+
+    .side-panel-list {
+      ul {
+        li {
+          a {
+            color: #fff;
+            font-size: 16px;
+          }
+          .uk-accordion-content {
+            background: #e6edf7;
+            padding: 0.5rem;
+            padding-left: 4rem;
+
+            .dropdown-list {
+              color: $primary-color;
+            }
+          }
+        }
+        .uk-accordion-title {
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+
+          p {
+            display: none;
+            justify-content: space-between;
+            flex-grow: 1;
+          }
+          img {
+            height: 30px;
+          }
+          &::before {
+            display: none;
+          }
+        }
+
+        .uk-accordion-title > span {
+          transition: transform 0.5s;
+          margin-left: 0.3rem;
+        }
+        .uk-open > .uk-accordion-title > p > span {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  .side-panel-width {
+    width: auto;
+    transition: width 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      width: 250px;
+    }
+
+
+    &:hover #list{
+      display: flex;
+      margin-left: 1.5rem !important;
+    }
+  }
+
 }
 
 @import "responsive";

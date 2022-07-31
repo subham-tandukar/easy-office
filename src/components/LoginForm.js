@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import $ from "jquery";
 import axios from "axios";
+import { FaRegEye, FaRegEyeSlash, FaUserCircle } from "react-icons/fa";
+import { BsFillKeyFill } from "react-icons/bs";
 
 const LoginForm = () => {
   const [data, setData] = useState({
-    email: "",
+    userName: "",
     password: "",
   });
 
@@ -24,8 +26,8 @@ const LoginForm = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const { email, password } = data;
-    if (email === "") {
+    const { userName, password } = data;
+    if (userName === "") {
       setInvalidUsername("Username is required*");
       setColor({
         color: "#ff4949",
@@ -37,10 +39,10 @@ const LoginForm = () => {
         color: "#ff4949",
       });
     }
-    if (email != "" && password != "") {
+    if (userName != "" && password != "") {
       axios
-        .post("url", {
-          email: data.email,
+        .post("http://gharelukam.com/gharelukam/api/login", {
+          userName: data.userName,
           password: data.password,
         })
         .then((result) => {
@@ -96,17 +98,20 @@ const LoginForm = () => {
         <h5>Enter your valid credentials below.</h5>
         <form>
           <div className="username-input">
+            <div className="uk-position-relative">
             <input
               type="text"
               className="uk-input"
-              value={data.email}
+              value={data.userName}
               onChange={handleData}
               autoComplete="off"
-              id="email"
+              id="userName"
               placeholder="Username"
               onKeyPress={handleUsername}
               required
             />
+            <span className="username-icon"><FaUserCircle color="#0049ae" size="1.5rem"/></span>
+            </div>
             <span style={color}>{invalidUsername}</span>
           </div>
 
@@ -122,17 +127,18 @@ const LoginForm = () => {
                 onKeyPress={handlePassword}
                 required
               />
+              <span className="password-icon"><BsFillKeyFill color="#0049ae" size="1.5rem"/></span>
               <span
                 className="toggle-password"
                 uk-toggle="target: .toggle"
                 onClick={showPassword}
               >
-                <i className="fa fa-eye-slash toggle" title="Show Password"></i>
-                <i
-                  className="fa fa-eye toggle"
-                  title="Hide Password"
-                  hidden
-                ></i>
+                <i className="toggle" title="Show Password">
+                  <FaRegEyeSlash />
+                </i>
+                <i className="toggle" title="Hide Password" hidden>
+                  <FaRegEye />
+                </i>
               </span>
             </div>
             <span style={color}>{invalidPassword}</span>
