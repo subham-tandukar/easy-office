@@ -26,7 +26,7 @@ const Navbar = () => {
               </div>
 
               <div>
-                <FaToggleOff />
+              <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" defaultChecked/>
               </div>
             </div>
           </div>

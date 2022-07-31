@@ -1,9 +1,14 @@
+import { MdAdminPanelSettings, MdSupportAgent, MdReport } from "react-icons/md";
+import { FaUser, FaBuilding } from "react-icons/fa";
+import { TbNotes } from "react-icons/tb";
+import { AiFillSetting } from "react-icons/ai";
+import { IoIosRocket } from "react-icons/io";
 const sidePanelList = [
   {
     id: 1,
     list: "Admin",
-    iconImg: "images/admin.png",
-    dropdownList:"block",
+    listIcon: <MdAdminPanelSettings color="#fff" size="2rem" />,
+    dropdownList: "block",
     dropdownList1: "Admin1",
     dropdownList2: "Admin2",
     dropdownList3: "Admin3",
@@ -12,8 +17,8 @@ const sidePanelList = [
   {
     id: 2,
     list: "Employee",
-    iconImg: "images/employee.png",
-    dropdownList:"block",
+    listIcon: <FaUser color="#fff" size="2rem" />,
+    dropdownList: "block",
     dropdownList1: "Employee1",
     dropdownList2: "Employee2",
     dropdownList3: "Employee3",
@@ -22,8 +27,8 @@ const sidePanelList = [
   {
     id: 3,
     list: "Customer Support",
-    iconImg: "images/Customer Support.png",
-    dropdownList:"block",
+    listIcon: <MdSupportAgent color="#fff" size="2rem" />,
+    dropdownList: "block",
     dropdownList1: "Support1",
     dropdownList2: "Support2",
     dropdownList3: "Support3",
@@ -32,8 +37,8 @@ const sidePanelList = [
   {
     id: 4,
     list: "Report",
-    iconImg: "images/Report.png",
-    dropdownList:"block",
+    listIcon: <MdReport color="#fff" size="2rem" />,
+    dropdownList: "block",
     dropdownList1: "Report1",
     dropdownList2: "Report2",
     dropdownList3: "Report3",
@@ -42,8 +47,8 @@ const sidePanelList = [
   {
     id: 5,
     list: "Organization",
-    iconImg: "images/Organization.png",
-    dropdownList:"block",
+    listIcon: <FaBuilding color="#fff" size="2rem" />,
+    dropdownList: "block",
     dropdownList1: "Organization1",
     dropdownList2: "Organization2",
     dropdownList3: "Organization3",
@@ -52,22 +57,22 @@ const sidePanelList = [
   {
     id: 6,
     list: "Leave Note",
-    iconImg: "images/Leave Note.png",
-    dropdownList:"none",
+    listIcon: <TbNotes color="#fff" size="2rem" />,
+    dropdownList: "none",
     icon: "none",
   },
   {
     id: 7,
     list: "Projects",
-    iconImg: "images/Projects.png",
-    dropdownList:"none",
+    listIcon: <IoIosRocket color="#fff" size="2rem" />,
+    dropdownList: "none",
     icon: "none",
   },
   {
     id: 8,
     list: "Settings",
-    iconImg: "images/Settings.png",
-    dropdownList:"block",
+    listIcon: <AiFillSetting color="#fff" size="2rem" />,
+    dropdownList: "block",
     dropdownList1: "Settings1",
     dropdownList2: "Settings2",
     dropdownList3: "Settings3",

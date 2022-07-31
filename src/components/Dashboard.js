@@ -8,7 +8,7 @@ const Dashboard = () => {
     <>
       <section className="dashboard">
         <Navbar/>
-        <div className="uk-grid">
+        <div className="uk-grid content__wrapper">
           <div>
             <SidePanel/>
           </div>

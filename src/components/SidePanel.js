@@ -2,7 +2,6 @@ import React from "react";
 import sidePanelList from "./SidePanelListAPI";
 
 const SidePanel = () => {
-
   return (
     <>
       <section className="side__panel side-panel-width">
@@ -12,7 +11,7 @@ const SidePanel = () => {
               const {
                 id,
                 list,
-                iconImg,
+                listIcon,
                 dropdownList,
                 dropdownList1,
                 dropdownList2,
@@ -27,10 +26,12 @@ const SidePanel = () => {
                   className="uk-margin-remove"
                 >
                   <a href="#" className="uk-accordion-title">
-                    <div>
-                      <img src={iconImg} alt="icon" />
-                    </div>
-                    <p className="uk-margin-remove" id="list" style={{ color: "#fff" }}>
+                    {listIcon}
+                    <p
+                      className="uk-margin-remove"
+                      id="list"
+                      style={{ color: "#fff" }}
+                    >
                       {list}
                       <span
                         uk-icon="icon: chevron-right"
