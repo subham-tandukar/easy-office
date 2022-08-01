@@ -6,7 +6,7 @@ const Bargraph = () => {
   return (
     <>
       <section className="card-box">
-        <h2 className="card-title">Bar Graph</h2>
+        <h3 className="card-title">Bar Graph</h3>
         <div>
           <Bar
             height={400}
