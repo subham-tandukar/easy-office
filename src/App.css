@@ -237,15 +237,43 @@ html {
   margin: 0;
   font-size: 14px;
 }
+.dashboard nav span {
+  color: #000;
+  margin-right: 1rem;
+}
+.dashboard nav .notification {
+  position: relative;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+.dashboard nav .notification .uk-badge {
+  background: #0049ae;
+  position: absolute;
+  top: -50%;
+  left: 15px;
+}
+.dashboard nav .user {
+  cursor: pointer;
+}
+.dashboard nav .user img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  margin-left: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .dashboard nav .form-check-input {
-  width: 2em;
+  width: 2.3rem;
   margin-left: -2.5em;
   background-image: url(./switch1.svg);
   background-position: left center;
   border-radius: 2em;
   transition: background-position 0.15s ease-in-out;
-  height: 1em;
+  height: 1.3rem;
   margin-top: 0.25em;
+  margin-right: 0.5rem;
   vertical-align: top;
   background-color: #fff;
   background-repeat: no-repeat;
@@ -351,6 +379,50 @@ html {
   border-radius: 9px;
   padding: 1rem;
   margin-top: 3rem;
+}
+.dashboard .content__wrapper .side__content .head p {
+  margin-top: 1rem;
+}
+.dashboard .content__wrapper .side__content .total-employee {
+  position: relative;
+}
+.dashboard .content__wrapper .side__content .total-employee .total-employee-box {
+  background: #e6edf7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 9px;
+  position: relative;
+  padding: 2rem 1rem 1rem 1rem;
+}
+.dashboard .content__wrapper .side__content .total-employee .total-employee-box h3,
+.dashboard .content__wrapper .side__content .total-employee .total-employee-box p {
+  margin: 0;
+}
+.dashboard .content__wrapper .side__content .total-employee .total-employee-box h3 {
+  font-weight: bold;
+}
+.dashboard .content__wrapper .side__content .total-employee .total-employee-box .icon {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 1;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.dashboard .content__wrapper .side__content .total-employee::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90%;
+  height: 3px;
+  background: #0049ae;
+  left: 40px;
+  transform: translateY(-50%);
 }
 .dashboard .content__wrapper .side__content .today-absent {
   padding: 1rem 3rem;

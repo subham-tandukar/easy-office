@@ -1,12 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
+import { ThemeContext } from "./ThemeContext";
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const Bargraph = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <section className="card-box">
-        <h3 className="card-title">Bar Graph</h3>
+      <section className="card-box" style={theme}>
+        <h3 className="card-title" style={theme}>Bar Graph</h3>
         <div>
           <Bar
             height={400}

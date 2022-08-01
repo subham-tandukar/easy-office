@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
 
 const statistics = [
   {
@@ -28,10 +29,13 @@ const statistics = [
 ];
 
 const Statistics = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <section className="card-box">
-        <h3 className="card-title">Statistics</h3>
+      <section className="card-box" style={theme}>
+        <h3 className="card-title" style={theme}>
+          Statistics
+        </h3>
 
         {statistics.map((props) => {
           const { id, title, width, background } = props;
@@ -39,8 +43,8 @@ const Statistics = () => {
           return (
             <div key={id} className="statistics">
               <div className="uk-flex uk-flex-between uk-flex-middle">
-                <p>{title}</p>
-                <p>{width}</p>
+                <p style={theme}>{title}</p>
+                <p style={theme}>{width}</p>
               </div>
               <div className="progress">
                 <div

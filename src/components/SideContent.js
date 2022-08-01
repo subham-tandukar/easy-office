@@ -1,5 +1,6 @@
 import React from "react";
 import Bargraph from "./Bargraph";
+import Employee from "./Employee";
 import PieChart from "./PieChart";
 import ProjectDetails from "./ProjectDetails";
 import Statistics from "./Statistics";
@@ -9,6 +10,9 @@ const SideContent = () => {
   return (
     <>
       <section className="side__content">
+        <div>
+          <Employee/>
+        </div>
         <div className="uk-grid uk-grid-match uk-child-width-1-2">
           <div>
             <Bargraph />
@@ -18,7 +22,7 @@ const SideContent = () => {
             <PieChart />
           </div>
 
-          <div>
+          <div className="uk-flex-middle">
             <TodayAbsent />
           </div>
 

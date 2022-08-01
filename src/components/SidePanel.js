@@ -1,10 +1,13 @@
-import React from "react";
+import React ,{useContext} from "react";
 import sidePanelList from "./SidePanelListAPI";
+// import { ThemeContext } from "./ThemeContext";
 
 const SidePanel = () => {
+  // const { theme } = useContext(ThemeContext);
+
   return (
     <>
-      <section className="side__panel side-panel-width">
+      <section className="side__panel side-panel-width" >
         <div className="side-panel-list">
           <ul uk-accordion="true">
             {sidePanelList.map((props) => {

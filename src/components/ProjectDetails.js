@@ -1,48 +1,50 @@
-import React from "react";
+import React,{useContext} from "react";
+import { ThemeContext } from "./ThemeContext";
 
 const projectDetails = [
   {
     id: 1,
     name: "Project Name",
     status: "Status",
-    fontWeight: "bold",
+    fontWeight: "uk-text-bold",
     background: "#E6EDF7",
   },
   {
     id: 2,
     name: "Project Name",
     status: "Completed",
-    fontWeight: "regular",
+    fontWeight: "uk-text-normal",
     background: "#fff",
   },
   {
     id: 3,
     name: "Project Name",
     status: "Completed",
-    fontWeight: "regular",
+    fontWeight: "uk-text-normal",
     background: "#E6EDF7",
   },
   {
     id: 4,
     name: "Project Name",
     status: "Completed",
-    fontWeight: "regular",
+    fontWeight: "uk-text-normal",
     background: "#fff",
   },
   {
     id: 5,
     name: "Project Name",
     status: "Completed",
-    fontWeight: "regular",
+    fontWeight: "uk-text-normal",
     background: "#E6EDF7",
   },
 ];
 
 const ProjectDetails = () => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <section className="card-box" style={{ padding: "0.5rem 0 0 0" }}>
-        <h3 className="card-title">Project Details</h3>
+      <section className="card-box uk-margin-large-bottom uk-padding-remove" style={theme}>
+        <h3 className="card-title" style={theme}>Project Details</h3>
         {projectDetails.map((props) => {
           const { id, name, status, background, fontWeight } = props;
           return (
@@ -52,10 +54,10 @@ const ProjectDetails = () => {
                 style={{ background: background }}
               >
                 <div>
-                  <p style={{ fontWeight: fontWeight }}>{name}</p>
+                  <p className={fontWeight}>{name}</p>
                 </div>
                 <div>
-                  <p style={{ fontWeight: fontWeight }}>{status}</p>
+                  <p className={fontWeight}>{status}</p>
                 </div>
               </div>
             </div>

@@ -274,16 +274,45 @@ html {
       margin: 0;
       font-size: 14px;
     }
+    span {
+      color: #000;
+      margin-right: 1rem;
+    }
+
+    .notification {
+      position: relative;
+      margin-left: 1rem;
+      cursor: pointer;
+      .uk-badge {
+        background: $primary-color;
+        position: absolute;
+        top: -50%;
+        left: 15px;
+      }
+    }
+
+    .user{
+      cursor: pointer;
+      img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+        margin-left: 1rem;
+        object-fit: cover;
+      }
+    }
 
     .form-check-input {
-      width: 2em;
+      width: 2.3rem;
       margin-left: -2.5em;
       background-image: url(./switch1.svg);
       background-position: left center;
       border-radius: 2em;
       transition: background-position 0.15s ease-in-out;
-      height: 1em;
+      height: 1.3rem;
       margin-top: 0.25em;
+      margin-right: 0.5rem;
       vertical-align: top;
       background-color: #fff;
       background-repeat: no-repeat;
@@ -410,6 +439,55 @@ html {
         padding: 1rem;
         margin-top: 3rem;
       }
+      .head {
+        p {
+          margin-top: 1rem;
+        }
+      }
+      .total-employee {
+        position: relative;
+        .total-employee-box {
+          background: $secondary-color;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+          border-radius: 9px;
+          position: relative;
+          padding: 2rem 1rem 1rem 1rem;
+
+          h3,
+          p {
+            margin: 0;
+          }
+          h3 {
+            font-weight: bold;
+          }
+
+          .icon {
+            position: absolute;
+            top: -30%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index: 1;
+            background: #ffffff;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+          }
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 90%;
+          height: 3px;
+          background: $primary-color;
+          left: 40px;
+          transform: translateY(-50%);
+        }
+      }
       .today-absent {
         padding: 1rem 3rem;
         img {
@@ -425,7 +503,7 @@ html {
       }
       .statistics {
         margin-bottom: 1rem;
-        p{
+        p {
           margin: 0;
         }
         .progress {
@@ -447,10 +525,10 @@ html {
           }
         }
       }
-      .project-details{
+      .project-details {
         padding: 1rem 3rem;
-        p{
-          margin: 0
+        p {
+          margin: 0;
         }
       }
     }
