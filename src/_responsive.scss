@@ -2,6 +2,14 @@ $primary-color: #0049ae;
 $secondary-color: #e6edf7;
 $transition: all 0.3s ease-in-out;
 
+@media (min-width: 959.9px) {
+  .dots-icon,
+  #mob-nav,
+  .ham-menu {
+    display: none;
+  }
+}
+
 @media (max-width: 959.9px) {
   .login__page {
     overflow: hidden;
@@ -13,9 +21,79 @@ $transition: all 0.3s ease-in-out;
       padding-left: 30px !important;
     }
   }
+
+  .logo {
+    width: 200px !important;
+    margin-left: 2rem;
+  }
+
+  .side__panel {
+    width: 0 !important;
+  }
+  .side__content {
+    padding-left: 40px !important;
+  }
+  .total-employee {
+    .total-employee-box {
+      margin-bottom: 3rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+  .project-details,
+  .today-absent {
+    padding: 1rem !important;
+  }
+  nav {
+    padding: 0.9rem 0 !important;
+  }
+  #large-nav {
+    display: none;
+  }
+  .dots-icon {
+    padding-right: 2rem;
+    cursor: pointer;
+    .dots {
+      transition: $transition;
+      &:hover {
+        color: $primary-color !important;
+      }
+    }
+  }
+  .mob-nav {
+    display: none;
+  }
+  .ham-menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    cursor: pointer;
+
+    .ham-icon {
+      transition: $transition;
+      &:hover {
+        color: $primary-color !important;
+      }
+    }
+    .close-icon {
+      transition: $transition;
+      &:hover {
+        color: #ff4949 !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 639.9px) {
+  p {
+    font-size: 14px;
+  }
+  .card-title {
+    font-size: 20px;
+  }
   .login__page {
     .login-form-wrapper,
     .login-img-wrapper {
@@ -44,5 +122,9 @@ $transition: all 0.3s ease-in-out;
         }
       }
     }
+  }
+  .side__content {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 }

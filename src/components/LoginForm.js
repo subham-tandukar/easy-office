@@ -41,7 +41,7 @@ const LoginForm = () => {
     }
     if (userName != "" && password != "") {
       axios
-        .post("http://gharelukam.com/gharelukam/api/login", {
+        .post("", {
           userName: data.userName,
           password: data.password,
         })

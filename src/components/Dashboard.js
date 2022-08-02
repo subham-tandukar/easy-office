@@ -11,12 +11,13 @@ const Dashboard = () => {
     <>
       <section className="dashboard">
         <Navbar/>
-        <div className="uk-grid content__wrapper">
+
+        <div className="content__wrapper">
           <div>
             <SidePanel/>
           </div>
 
-          <div className="uk-width-expand" style={theme}>
+          <div style={theme}>
             <SideContent />
           </div>
         </div>

@@ -1,5 +1,4 @@
-import React,{useContext} from "react";
-import { ThemeContext } from "./ThemeContext";
+import React from "react";
 
 const todayAbsent = [
   {
@@ -32,11 +31,10 @@ const todayAbsent = [
 ];
 
 const TodayAbsent = () => {
-  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <section className="card-box uk-padding-remove" style={theme}>
-        <h3 className="card-title" style={theme}>Today Absent</h3>
+      <section className="card-box uk-padding-remove">
+        <h3 className="card-title">Today Absent</h3>
         {todayAbsent.map((props) => {
           const { id, img, name, leaveDate, date, background,color } = props;
 
@@ -45,6 +43,7 @@ const TodayAbsent = () => {
               className="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap today-absent"
               style={{ background: background }}
               key={id}
+              uk-scrollspy="cls: uk-animation-scale-up; delay: 500; repeat: false"
             >
               <div>
                 <img src={img} alt="" />

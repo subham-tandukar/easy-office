@@ -36,6 +36,14 @@ html {
   scroll-behavior: smooth;
 }
 
+.block {
+  display: block !important;
+}
+
+.none {
+  display: none !important;
+}
+
 .login__page {
   .login__img {
     .txt {
@@ -263,6 +271,10 @@ html {
     z-index: 1000;
     width: 100%;
 
+    .logo{
+      width: 250px;
+    }
+
     h3 {
       font-weight: bold;
       margin: 0;
@@ -291,9 +303,9 @@ html {
       }
     }
 
-    .user{
+    .user {
       cursor: pointer;
-      img{
+      img {
         width: 30px;
         height: 30px;
         border-radius: 50%;
@@ -330,15 +342,32 @@ html {
       border-color: $primary-color;
     }
   }
+  #mob-nav {
+    position: absolute;
+    right: 0;
+    background: $secondary-color;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0px 4px 4px rgba(119, 119, 119, 0.25);
+    border-radius: 9px;
+  }
+  .side-menu {
+    width: 250px !important;
+  }
 
   .content__wrapper {
     margin-top: 5rem;
     .side__panel {
-      background: linear-gradient(
-        164.93deg,
-        rgba(0, 73, 174, 0.5) 0%,
-        #0049ae 100%
-      );
+      background: $primary-color;
+      width: 65px;
+      transition: width 0.3s ease-in-out;
+      cursor: pointer;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-bottom: 4rem;
+      z-index: 1000;
 
       .side-panel-list {
         ul {
@@ -354,6 +383,7 @@ html {
 
               .dropdown-list {
                 color: $primary-color;
+                font-size: 14px;
               }
             }
           }
@@ -362,11 +392,18 @@ html {
             display: flex;
             align-items: center;
 
-            p {
-              display: none;
-              justify-content: space-between;
-              flex-grow: 1;
+            .list {
+              position: absolute;
+              display: inline-block;
+              width: 100%;
+              margin-left: 1rem !important;
+              margin-top: -0.7rem !important;
             }
+            .dropdown-icon {
+              position: absolute;
+              right: 35%;
+            }
+
             img {
               height: 30px;
             }
@@ -379,30 +416,20 @@ html {
             transition: transform 0.5s;
             margin-left: 0.3rem;
           }
-          .uk-open > .uk-accordion-title > p > span {
+          .uk-open > .uk-accordion-title .dropdown-icon {
             transform: rotate(90deg);
           }
         }
       }
-    }
-
-    .side-panel-width {
-      width: auto;
-      transition: width 0.3s ease-in-out;
-      cursor: pointer;
 
       &:hover {
         width: 250px;
-      }
-
-      &:hover #list {
-        display: flex;
-        margin-left: 1.5rem !important;
       }
     }
 
     .side__content {
       padding-right: 40px;
+      padding-left: 100px;
       .card-title {
         font-weight: bold;
         position: relative;
@@ -438,6 +465,7 @@ html {
         border-radius: 9px;
         padding: 1rem;
         margin-top: 3rem;
+        overflow: hidden;
       }
       .head {
         p {

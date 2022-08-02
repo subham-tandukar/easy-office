@@ -1,13 +1,31 @@
-import React ,{useContext} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import sidePanelList from "./SidePanelListAPI";
-// import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "./ThemeContext";
 
 const SidePanel = () => {
-  // const { theme } = useContext(ThemeContext);
+  const { sideMenu } = useContext(ThemeContext);
+
+  const [hide, setHide] = useState(false);
+
+  useEffect(() => {
+    if (hide) {
+      document.querySelectorAll(".uk-accordion-content").forEach((el) => {
+        el.classList.add("none");
+      });
+    } else {
+      document.querySelectorAll(".uk-accordion-content").forEach((el) => {
+        el.classList.remove("none");
+      });
+    }
+  }, [hide]);
 
   return (
     <>
-      <section className="side__panel side-panel-width" >
+      <section
+        className={`side__panel ${sideMenu ? "side-menu" : ""}`}
+        onMouseOver={() => setHide(false)}
+        onMouseLeave={() => setHide(!hide)}
+      >
         <div className="side-panel-list">
           <ul uk-accordion="true">
             {sidePanelList.map((props) => {
@@ -29,39 +47,38 @@ const SidePanel = () => {
                   className="uk-margin-remove"
                 >
                   <a href="#" className="uk-accordion-title">
-                    {listIcon}
-                    <p
-                      className="uk-margin-remove"
-                      id="list"
-                      style={{ color: "#fff" }}
-                    >
-                      {list}
+                    <div>{listIcon}</div>
+                    <div>
                       <span
-                        uk-icon="icon: chevron-right"
-                        className="dropdown-icon"
-                        style={{ display: icon }}
-                      ></span>
-                    </p>
+                        className="uk-margin-remove list"
+                        style={{ color: "#fff" }}
+                      >
+                        {list}
+                        <span
+                          uk-icon="icon: chevron-right"
+                          className="dropdown-icon"
+                          style={{ display: icon }}
+                        ></span>
+                      </span>
+                    </div>
                   </a>
-                  <div
-                    className="uk-accordion-content uk-margin-remove-top"
+                  <ul
+                    className="uk-accordion-content uk-margin-remove-top uk-nav uk-dropdown-nav"
                     style={{ display: dropdownList }}
                     id="uk-accordion-content"
                   >
-                    <ul className="uk-nav uk-dropdown-nav">
-                      <li>
-                        <a href="#" className="dropdown-list">
-                          {dropdownList1}
-                        </a>
-                        <a href="#" className="dropdown-list">
-                          {dropdownList2}
-                        </a>
-                        <a href="#" className="dropdown-list">
-                          {dropdownList3}
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
+                    <li>
+                      <a href="#" className="dropdown-list">
+                        {dropdownList1}
+                      </a>
+                      <a href="#" className="dropdown-list">
+                        {dropdownList2}
+                      </a>
+                      <a href="#" className="dropdown-list">
+                        {dropdownList3}
+                      </a>
+                    </li>
+                  </ul>
                 </li>
               );
             })}

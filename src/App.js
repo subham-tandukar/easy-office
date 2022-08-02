@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
-// import LoginPage from "./components/LoginPage";
+import { Routes, Route } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
 
 const App = () => {
   return (
     <>
-      {/* <LoginPage /> */}
-      <Dashboard />
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </>
   );
 };

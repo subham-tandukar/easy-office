@@ -1,5 +1,4 @@
-import React,{useContext} from "react";
-import { ThemeContext } from "./ThemeContext";
+import React from "react";
 
 const projectDetails = [
   {
@@ -40,15 +39,14 @@ const projectDetails = [
 ];
 
 const ProjectDetails = () => {
-  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <section className="card-box uk-margin-large-bottom uk-padding-remove" style={theme}>
-        <h3 className="card-title" style={theme}>Project Details</h3>
+      <section className="card-box uk-margin-large-bottom uk-padding-remove">
+        <h3 className="card-title">Project Details</h3>
         {projectDetails.map((props) => {
           const { id, name, status, background, fontWeight } = props;
           return (
-            <div key={id}>
+            <div key={id} uk-scrollspy="cls: uk-animation-scale-up; delay: 500; repeat: false">
               <div
                 className="uk-flex uk-flex-between uk-flex-middle uk-flex-wrap project-details"
                 style={{ background: background }}

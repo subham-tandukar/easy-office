@@ -7,8 +7,9 @@ export const ThemeProvider = (props) => {
     background: "#fff",
     color: "000",
   });
+  const [sideMenu, setSideMenu]=useState(false);
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, setTheme ,sideMenu, setSideMenu}}>
       {props.children}
     </ThemeContext.Provider>
   );

@@ -29,18 +29,20 @@ const Employee = () => {
   return (
     <>
       <div className="uk-flex uk-flex-between uk-flex-wrap uk-flex-middle head">
-        <div>
-          <p className="uk-text-bold" style={theme}>Welcome!</p>
+        <div className="uk-margin-right">
+          <p className="uk-text-bold" style={theme}>
+            Welcome!
+          </p>
         </div>
 
-        <div>
+        <div className="uk-margin-left">
           <p style={theme}>
             <VscCalendar /> {todayDate} | Fiscal Year: 2079-2080
           </p>
         </div>
       </div>
 
-      <div className="total-employee uk-grid uk-child-width-1-4 uk-grid-match uk-margin-medium-top">
+      <div className="total-employee uk-grid uk-child-width-1-4@m uk-child-width-1-2@s uk-grid-match uk-margin-medium-top">
         {employee.map((props) => {
           const { id, number } = props;
           return (

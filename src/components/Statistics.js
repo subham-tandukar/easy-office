@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import React from "react";
 
 const statistics = [
   {
@@ -29,11 +28,10 @@ const statistics = [
 ];
 
 const Statistics = () => {
-  const { theme } = useContext(ThemeContext);
   return (
     <>
-      <section className="card-box" style={theme}>
-        <h3 className="card-title" style={theme}>
+      <section className="card-box">
+        <h3 className="card-title">
           Statistics
         </h3>
 
@@ -43,10 +41,10 @@ const Statistics = () => {
           return (
             <div key={id} className="statistics">
               <div className="uk-flex uk-flex-between uk-flex-middle">
-                <p style={theme}>{title}</p>
-                <p style={theme}>{width}</p>
+                <p>{title}</p>
+                <p>{width}</p>
               </div>
-              <div className="progress">
+              <div className="progress" uk-scrollspy="cls: uk-animation-slide-left; delay: 500; repeat: false">
                 <div
                   className="progress-bar"
                   style={{ width: width, background: background }}

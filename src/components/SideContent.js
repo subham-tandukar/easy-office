@@ -13,7 +13,7 @@ const SideContent = () => {
         <div>
           <Employee/>
         </div>
-        <div className="uk-grid uk-grid-match uk-child-width-1-2">
+        <div className="uk-grid uk-grid-match uk-child-width-1-2@s">
           <div>
             <Bargraph />
           </div>
