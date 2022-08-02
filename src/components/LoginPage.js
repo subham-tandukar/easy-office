@@ -6,7 +6,7 @@ const LoginPage = () => {
   return (
     <>
       <nav className="uk-container uk-container-expand uk-margin-top uk-margin-bottom">
-        <img src="images/logo.png" alt="logo" style={{height:"60px"}} />
+        <img src="images/logo.png" alt="logo" style={{height:"60px"}} className="uk-margin-left"/>
       </nav>
 
       <section className="login__page uk-container">
