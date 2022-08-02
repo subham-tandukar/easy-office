@@ -6,7 +6,12 @@ const LoginPage = () => {
   return (
     <>
       <nav className="uk-container uk-container-expand uk-margin-top uk-margin-bottom">
-        <img src="images/logo.png" alt="logo" style={{height:"60px"}} className="uk-margin-left"/>
+        <img
+          src="images/logo.png"
+          alt="logo"
+          style={{ height: "60px" }}
+          className="uk-margin-left"
+        />
       </nav>
 
       <section className="login__page uk-container">
@@ -21,7 +26,10 @@ const LoginPage = () => {
         </div>
       </section>
 
-      <span className="copyright"> &copy; 2022 Easy Software Pvt. Ltd. All Rights Reserved</span>
+      <span className="copyright">
+        {" "}
+        &copy; 2022 Easy Software Pvt. Ltd. All Rights Reserved
+      </span>
     </>
   );
 };
